@@ -13,6 +13,7 @@ public class PointCounter : MonoBehaviour
     [SerializeField] List<Pin> pins;
     [SerializeField] List<GameObject> pin;
     [SerializeField] private Button resetButton;
+    private bool pointGiven;
 
 
     // Start is called before the first frame update
@@ -30,7 +31,18 @@ public class PointCounter : MonoBehaviour
         {
             if (p.transform.position.y < 0.15f)
             {
-                if (p.hasFallen == false) score += 1;
+                if (pointGiven == false) {
+
+                
+                score += 1;
+                 p.hasFallen = true;
+                 pointGiven = true; 
+                 }
+                 if (pointGiven == true)
+                 {
+                    p.hasFallen = true;
+                 }
+
 
                 if (p.hasFallen == true)
                 {

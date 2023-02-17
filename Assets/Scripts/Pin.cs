@@ -15,6 +15,6 @@ public class Pin : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (gameObject.transform.position.y < 0.149f) hasFallen = true;
+        
     }
 }
